@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Links de Afiliado - Shopee</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      /* Fundo com degradê rosa e roxo + imagem */
+      background: linear-gradient(135deg, rgba(255,182,193,0.9), rgba(186,85,211,0.9)),
+                  url('https://images.unsplash.com/photo-1607083206863-a42f3f6b48ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+    }
+
+    h1 {
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    p {
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    #searchInput {
+      width: 90%;
+      max-width: 400px;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .search-icon {
+      width: 30px;
+      height: 30px;
+      filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.5));
+    }
+
+    .product-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .product {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      padding: 15px 20px;
+      margin: 10px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      text-align: left;
+      color: #333;
+    }
+
+    .product a {
+      text-decoration: none;
+      color: #8a2be2;
+      font-weight: bold;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛒 Meus Produtos da Shopee</h1>
+  <p>Use a barra abaixo para buscar um produto específico:</p>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Ex: tapete felpudo, fita de LED, etc" onkeyup="filtrarProdutos()" />
+    <img class="search-icon" src="https://cdn.discordapp.com/attachments/1388681596365836328/1403116889034457288/2866321.png" alt="Buscar">
+  </div>
+
+  <div class="product-list" id="productList">
+
+    <div class="product">
+      <p>Tapete Felpudo</p>
+      <a href="#">[Seu link de afiliado aqui]</a>
+    </div>
+
+    <div class="product">
+      <p>Fita de LED para Quarto</p>
+      <a href="#">[Seu link de afiliado aqui]</a>
+    </div>
+
+    <div class="product">
+      <p>Porta Temperos Magnético</p>
+      <a href="#">[Seu link de afiliado aqui]</a>
+    </div>
+
+    <div class="product">
+      <p>Kit Quadros Decorativos Sala</p>
+      <a href="#">[Seu link de afiliado aqui]</a>
+    </div>
+
+    <div class="product">
+      <p>Colcha Casal 3 Peças</p>
+      <a href="#">[Seu link de afiliado aqui]</a>
+    </div>
+
+    <div class="product">
+      <p>Cortina de Banho Impermeável</p>
+      <a href="#">[Seu link de afiliado aqui]</a>
+    </div>
+
+    <div class="product">
+      <p>Luminária de Mesa LED</p>
+      <a href="#">[Seu link de afiliado aqui]</a>
+    </div>
+
+  </div>
+
+  <footer>
+    Comprando por esses links você me ajuda a continuar criando conteúdo ❤️
+  </footer>
+
+  <script>
+    function filtrarProdutos() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const produtos = document.getElementsByClassName('product');
+
+      for (let i = 0; i < produtos.length; i++) {
+        const textoProduto = produtos[i].innerText.toLowerCase();
+        if (textoProduto.includes(input)) {
+          produtos[i].classList.remove('hidden');
+        } else {
+          produtos[i].classList.add('hidden');
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
